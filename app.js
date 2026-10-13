@@ -177,9 +177,13 @@
     return '<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>' +
       '<filter id="puff" x="-6%" y="-6%" width="112%" height="112%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceAlpha" stdDeviation="1.2" result="b"/><feSpecularLighting in="b" surfaceScale="3" specularConstant=".7" specularExponent="20" lighting-color="#ffffff" result="s"><feDistantLight azimuth="235" elevation="58"/></feSpecularLighting><feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="s2"/></feMerge></filter>' +
       '<symbol id="seal" viewBox="0 0 120 120"></symbol></defs></svg>' +
-      '<div id="cover"' + (state.opened ? ' class="gone"' : '') + '><span class="kicker">The wedding of</span>' +
-      '<button id="openBtn" type="button" aria-label="Open the invitation"><svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Wedding seal"><use href="#seal" width="120" height="120"/></svg></button>' +
-      '<span class="hint">Tap to open</span></div>' +
+      '<div id="cover"' + (state.opened ? ' class="gone"' : '') + '><span class="kicker">A treasured invitation</span>' +
+      '<div class="envelope" aria-label="Ivory wedding envelope with burgundy lining and gold details">' +
+      '<div class="envelope-back"></div>' +
+      '<div class="envelope-letter"><span class="letter-monogram">' + esc(monoOf(d)) + '</span><span class="letter-names">' + esc(d.groomShort) + ' &amp; ' + esc(d.brideShort) + '</span><span class="letter-caption">YOU ARE CORDIALLY INVITED</span></div>' +
+      '<div class="envelope-flap"></div><div class="envelope-front"></div>' +
+      '<button id="openBtn" type="button" aria-label="Break the wax seal and open the invitation"><svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Gold-edged burgundy wax seal"><use href="#seal" width="120" height="120"/></svg></button></div>' +
+      '<span class="hint">Touch the seal to open your invitation</span></div>' +
       '<header class="stage"><img class="bg" src="img/scene.webp" alt="" decoding="async">' +
       '<div class="drape l"></div><div class="drape r"></div><div class="tie l"></div><div class="tie r"></div>' +
       '<img class="valance" src="img/valance.webp" alt="">' +
